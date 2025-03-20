@@ -4,6 +4,8 @@
     font-weight: 400;
     color: #F5E8D0;
     background-color: #faf6ed;
+    background-image: url('amamam.jpg');
+    /* Шоколадки!!!!!! */
     font-synthesis: none;
     text-rendering: optimizeLegibility;
 }
@@ -64,7 +66,7 @@ html {
 
 .my-main-table {
     margin-top: 20px;
-    border-spacing: 6px; 
+    border-spacing: 6px;
 }
 
 .my-main-table tr {
