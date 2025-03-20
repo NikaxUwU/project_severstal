@@ -61,15 +61,15 @@ const Table = ({data}) => {
       <button onClick={SortByEmail}>
         Сортировать по Email ({sortOrder === "asc" ? "по возрастанию" : "по убыванию"})
       </button></div>
-      <table>
-        <thead>
-          <tr>
-            <th>Имя</th>
-            <th>Email</th>
-            <th>Баланс</th>
-          </tr>
-        </thead>
+      <table class="my-main-table">
+
         <tbody>
+          <tr  style={{ transform: `translateX(0px)` }}>
+            <td>Имя</td>
+            <td>Email</td>
+            <td>Баланс</td>
+          </tr>
+
           {filteredData.map(item => (
             <Row key={item.id} item={item} />
           ))}
