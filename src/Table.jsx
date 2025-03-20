@@ -8,6 +8,8 @@ const Table = ({data}) => {
   const [sortBy, setSortBy] = useState(null);
   const [sortOrder, setSortOrder] = useState(null);
 
+  {/* если пользователь нажал на кнопку сортировки, то сортируем, смотрим на то что выбрал пользователь :/ */}
+
   const sortData = (data) => {
     if (!sortBy || !sortOrder) return data; 
     return [...data].sort((a, b) => {
@@ -24,6 +26,8 @@ const Table = ({data}) => {
     });
   };
 
+  {/* Простенькие функции для изменения значений при нажатии на кнопки фильтрации */}
+
   const SortByBalance = () => {
     setSortBy("balance");
     setSortOrder(sortOrder === "asc" ? "desc" : "asc"); 
@@ -36,7 +40,8 @@ const Table = ({data}) => {
 
   const treeData = buildTree(sortData(data));
 
-  
+  {/* Такое же переключение но для фильтра с активностью */}
+
   const toggleFilter = () => {
     if (filterState === "all") {
       setFilterState("active");
@@ -47,8 +52,10 @@ const Table = ({data}) => {
     }
   };
 
-  const filteredData = filterData(treeData, filterState);
+  const filteredData = filterData(treeData, filterState); {/* Тут пользуюсь фильтрацией из другого файла, убираю ненужные значения по активности, если такие имеются */}
   
+  {/* Создаю кнопки и таблицу, передаю все отсортированные данные */}
+
   return (
     <div>
       <div class="button-div-container">
