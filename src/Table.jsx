@@ -1,9 +1,10 @@
 import React, { useState } from "react";
 import Row from "./Row";
 import { buildTree } from "./DataTree";
+import { filterData } from "./filterData";
 
 const Table = ({data}) => {
-  
+  const [filterState, setFilterState] = useState("all"); 
   const [sortBy, setSortBy] = useState(null);
   const [sortOrder, setSortOrder] = useState(null);
 
@@ -35,14 +36,31 @@ const Table = ({data}) => {
 
   const treeData = buildTree(sortData(data));
 
+  
+  const toggleFilter = () => {
+    if (filterState === "all") {
+      setFilterState("active");
+    } else if (filterState === "active") {
+      setFilterState("inactive");
+    } else {
+      setFilterState("all");
+    }
+  };
+
+  const filteredData = filterData(treeData, filterState);
+  
   return (
     <div>
+      <div class="button-div-container">
+      <button onClick={toggleFilter}>
+        {filterState === "all" ? "Показать только активных" : filterState === "active" ? "Показать только неактивных" : "Показать всех"}
+      </button>
       <button onClick={SortByBalance}>
         Сортировать по балансу ({sortOrder === "asc" ? "по возрастанию" : "по убыванию"})
       </button>
       <button onClick={SortByEmail}>
         Сортировать по Email ({sortOrder === "asc" ? "по возрастанию" : "по убыванию"})
-      </button>
+      </button></div>
       <table>
         <thead>
           <tr>
@@ -52,7 +70,7 @@ const Table = ({data}) => {
           </tr>
         </thead>
         <tbody>
-          {treeData.map(item => (
+          {filteredData.map(item => (
             <Row key={item.id} item={item} />
           ))}
         </tbody>

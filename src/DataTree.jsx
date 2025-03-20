@@ -11,5 +11,3 @@ export const buildTree = (data) => {
 
     return [...map.values()].filter(item => item.parentId === 0);
 };
-
-export default buildTree;
