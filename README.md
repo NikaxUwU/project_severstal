@@ -19,6 +19,6 @@ If you are developing a production application, we recommend using TypeScript an
 - Скачайте репозиторий: git clone https://github.com/NikaxUwU/project_severstal.git
 - Перейдите в папку проекта: cd project_severstal
 - Установите зависимости: npm install
-- Запустите проект: npm start
+- Запустите проект: npm run dev
   
 Вот, на всякий случай :3
