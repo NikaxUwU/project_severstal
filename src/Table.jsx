@@ -58,7 +58,7 @@ const Table = ({data}) => {
 
   return (
     <div>
-      <div class="button-div-container">
+      <div className="button-div-container">
       <button onClick={toggleFilter}>
         {filterState === "all" ? "Показать только активных" : filterState === "active" ? "Показать только неактивных" : "Показать всех"}
       </button>
@@ -68,15 +68,13 @@ const Table = ({data}) => {
       <button onClick={SortByEmail}>
         Сортировать по Email ({sortOrder === "asc" ? "по возрастанию" : "по убыванию"})
       </button></div>
-      <table class="my-main-table">
-
+      <table className="my-main-table">
         <tbody>
           <tr  style={{ transform: `translateX(0px)` }}>
             <td>Имя</td>
             <td>Email</td>
             <td>Баланс</td>
           </tr>
-
           {filteredData.map(item => (
             <Row key={item.id} item={item} />
           ))}

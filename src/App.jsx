@@ -6,7 +6,7 @@ import data from './data.json';
 
 const App = () => {
   return (
-    <div class="body-main-div">
+    <div className="body-main-div">
       <h1>Таблица данных</h1>
       <Table data={data} /> 
     </div>

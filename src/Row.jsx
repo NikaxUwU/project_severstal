@@ -8,7 +8,8 @@ const Row = ({ item, level = 0  }) => {
 
   return (
     <>
-      <tr onClick={() => setExpanded(!expanded)} style={{ transform: `translateX(${level * 50}px)`}}> {/* Для отсупов использую смещение по оси X, умножая значение на уровень */}
+    {/* Для отсупов использую смещение по оси X, умножая значение на уровень */}
+      <tr onClick={() => setExpanded(!expanded)} style={{ transform: `translateX(${level * 50}px)`}}>
       <td>{item.name}</td>
         <td>{item.email}</td>
         <td>{item.balance}</td>
