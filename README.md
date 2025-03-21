@@ -14,10 +14,11 @@ If you are developing a production application, we recommend using TypeScript an
 "# project_severstal" 
 "# project_severstal" 
 
-Как запустить проект?
+## Как запустить проект?
 
-1 -> Скачайте репозиторий: git clone https://github.com/NikaxUwU/project_severstal.git
-2 -> Перейдите в папку проекта: cd project_severstal
-3 -> Установите зависимости: npm install
-4 -> Запустите проект: npm start
+- Скачайте репозиторий: git clone https://github.com/NikaxUwU/project_severstal.git
+- Перейдите в папку проекта: cd project_severstal
+- Установите зависимости: npm install
+- Запустите проект: npm start
+  
 Вот, на всякий случай :3
